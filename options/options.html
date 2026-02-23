@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="optionsTitle">CatchUrls Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+  <div class="options-container">
+    <header class="header">
+      <div class="logo">
+        <img src="../icons/icon48.png" alt="CatchUrls" width="32" height="32">
+        <h1 data-i18n="optionsTitle">CatchUrls Options</h1>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section">
+        <h2 class="section-title" data-i18n="generalSettings">General Settings</h2>
+
+        <div class="setting-group">
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="language" data-i18n="language">Language</label>
+              <p class="setting-desc" data-i18n="languageDesc">Choose your preferred language</p>
+            </div>
+            <select id="language">
+              <option value="en">English</option>
+              <option value="ko">한국어</option>
+              <option value="ja">日本語</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="theme" data-i18n="theme">Theme</label>
+              <p class="setting-desc" data-i18n="themeDesc">Choose your preferred appearance</p>
+            </div>
+            <select id="theme">
+              <option value="system" data-i18n-option="themeSystem">System</option>
+              <option value="dark" data-i18n-option="themeDark">Dark</option>
+              <option value="light" data-i18n-option="themeLight">Light</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="modifierKey" data-i18n="modifierKey">Hotkey (e.g., Alt)</label>
+              <p class="setting-desc" data-i18n="modifierKeyDesc">Key to hold when clicking links</p>
+            </div>
+            <select id="modifierKey">
+              <option value="alt" data-i18n-option="altOption">Alt (Option)</option>
+              <option value="ctrl" data-i18n-option="ctrlOption">Ctrl (Control)</option>
+              <option value="meta" data-i18n-option="metaOption">Meta (Command/Win)</option>
+              <option value="shift" data-i18n-option="shiftOption">Shift</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="clearOnToggle" data-i18n="clearOnToggle">Clear URLs on Toggle</label>
+              <p class="setting-desc" data-i18n="clearOnToggleDesc">Clear collected URLs when selection mode is toggled
+                OFF</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="clearOnToggle">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section stats-section">
+        <h2 class="section-title" data-i18n="statsDashboard">Collection Stats</h2>
+
+        <div class="stats-total-row">
+          <span class="stats-label" data-i18n="statsTotalLabel">Total added</span>
+          <strong id="statsTotalValue" class="stats-total-value">0</strong>
+        </div>
+
+        <div class="stats-subsection">
+          <p class="stats-subtitle" data-i18n="statsTrend7Days">Last 7 days</p>
+          <div id="statsTrendBars" class="stats-trend-bars"></div>
+        </div>
+
+        <div class="stats-subsection">
+          <p class="stats-subtitle" data-i18n="statsTopDomains">Top domains</p>
+          <div id="statsTopDomains" class="stats-top-domains"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title" data-i18n="copySettings">Copy Settings</h2>
+
+        <div class="setting-group">
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="copyFormat" data-i18n="copyFormat">Default Copy Format</label>
+              <p class="setting-desc" data-i18n="copyFormatDesc">How links are formatted when copied</p>
+            </div>
+            <select id="copyFormat">
+              <option value="urls" data-i18n-option="urlsOnly">URLs only</option>
+              <option value="title-url" data-i18n-option="titleUrl">Title + URL (newlines)</option>
+              <option value="title-tab-url" data-i18n-option="titleTabUrl">Title [Tab] URL</option>
+              <option value="markdown" data-i18n-option="markdown">Markdown</option>
+              <option value="json" data-i18n-option="json">JSON</option>
+              <option value="html" data-i18n-option="html">HTML</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="copySeparator" data-i18n="copySeparator">URL Separator</label>
+              <p class="setting-desc" data-i18n="copySeparatorDesc">Character between URLs</p>
+            </div>
+            <select id="copySeparator">
+              <option value="\n" data-i18n-option="newline">Newline</option>
+              <option value=", " data-i18n-option="comma">Comma</option>
+              <option value="\t" data-i18n-option="tab">Tab</option>
+              <option value=" " data-i18n-option="space">Space</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="autoCopy" data-i18n="autoCopy">Auto Copy</label>
+              <p class="setting-desc" data-i18n="autoCopyDesc">Automatically copy to clipboard when links are collected
+              </p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="autoCopy" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title" data-i18n="tabSettings">Tab Settings</h2>
+
+        <div class="setting-group">
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="openTabDelay" data-i18n="openTabDelay">Open Tab Delay (ms)</label>
+              <p class="setting-desc" data-i18n="openTabDelayDesc">Delay between opening each tab</p>
+            </div>
+            <input type="number" id="openTabDelay" min="0" max="5000" step="100" value="0">
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="openTabNextToActive" data-i18n="openTabNextToActive">Open Next to Active Tab</label>
+              <p class="setting-desc" data-i18n="openTabNextToActiveDesc">New tabs open beside current tab</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="openTabNextToActive" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title" data-i18n="advancedFeatures">Advanced Features</h2>
+
+        <div class="setting-group">
+          <div class="setting-row" style="display:none">
+            <div class="setting-info">
+              <label for="markAsVisited" data-i18n="markAsVisited">Mark Links as Visited</label>
+              <p class="setting-desc" data-i18n="markAsVisitedDesc">Automatically mark collected links as visited</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="markAsVisited">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="dynamicLinkDetection" data-i18n="dynamicLinkDetection">Dynamic Link Detection</label>
+              <p class="setting-desc" data-i18n="dynamicLinkDetectionDesc">Detect new links during drag (infinite
+                scroll)</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="dynamicLinkDetection" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="linkifyEnabled" data-i18n="linkifyEnabled">Linkify Text URLs</label>
+              <p class="setting-desc" data-i18n="linkifyEnabledDesc">Convert plain text URLs into clickable links</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="linkifyEnabled">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <label for="linkifyAggressive" data-i18n="linkifyAggressive">Aggressive Linkify Mode</label>
+              <p class="setting-desc" data-i18n="linkifyAggressiveDesc">Recognize domain-only URLs (e.g., google.com)
+              </p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="linkifyAggressive">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title" data-i18n="exclusionFilters">Exclusion Filters</h2>
+        <p class="section-desc" data-i18n="exclusionFiltersDesc">Skip links matching these patterns during selection</p>
+
+        <div class="filter-container">
+          <div class="filter-input-row">
+            <select id="filterType">
+              <option value="keyword" data-i18n-option="keyword">Keyword</option>
+              <option value="regex" data-i18n-option="regex">Regex</option>
+            </select>
+            <input type="text" id="filterValue" data-i18n-placeholder="filterPlaceholder"
+              placeholder="Enter keyword or regex pattern">
+            <button id="addFilterBtn" class="btn-add" data-i18n="add">Add</button>
+          </div>
+
+          <div id="filterList" class="filter-list"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title" data-i18n="disabledDomains">Disabled Domains</h2>
+        <p class="section-desc" data-i18n="disabledDomainsDesc">Completely disable CatchUrls on these domains</p>
+
+        <div class="filter-container">
+          <div class="filter-input-row">
+            <input type="text" id="domainValue" placeholder="example.com">
+            <button id="addDomainBtn" class="btn-add" data-i18n="add">Add</button>
+          </div>
+
+          <div id="domainList" class="filter-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-info">
+        <span>CatchUrls v1.0.3</span>
+
+        <a href="https://chromewebstore.google.com/detail/catchurls/lmffpcdgghhgjcgolflnpjnciedohojo" target="_blank"
+          rel="noopener noreferrer" data-i18n="rateUs">Rate Us ⭐</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScLzh8iHHkRTulaW1pU6Z-gMq3CpaRVcOyyhU9xZeVckf8ITg/viewform"
+          target="_blank" rel="noopener noreferrer" data-i18n="feedback">Feedback 💬</a>
+      </div>
+      <button id="saveBtn" class="btn-save" data-i18n="saveSettings">Save Settings</button>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="options.js"></script>
+</body>
+
+</html>

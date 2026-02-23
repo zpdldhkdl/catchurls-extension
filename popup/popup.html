@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CatchUrls</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="popup-container">
+    <header class="header">
+      <div class="logo">
+        <img src="../icons/icon48.png" alt="Logo" width="24" height="24">
+        <h1>CatchUrls</h1>
+      </div>
+      <button id="optionsBtn" class="icon-btn" title="Options">
+        <span>⚙️</span>
+      </button>
+    </header>
+
+    <section class="mode-section">
+      <div class="mode-toggle">
+        <span class="mode-label" data-i18n="selectionMode">Selection Mode</span>
+        <button id="toggleBtn" class="toggle-btn off" aria-pressed="false">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+          <span class="toggle-text" data-i18n="modeOff">OFF</span>
+        </button>
+      </div>
+      <div class="toggle-key-row">
+        <span class="toggle-key-label" data-i18n="toggleKey">Toggle Key</span>
+        <button id="toggleKeyBtn" class="key-capture-btn">
+          <kbd id="currentToggleKey">ESC</kbd>
+          <span class="key-edit-icon">✎</span>
+        </button>
+      </div>
+      <p class="hint" id="toggleKeyHint">
+        <span data-i18n="escHint">to toggle on page</span>
+      </p>
+    </section>
+
+    <section class="settings-section">
+      <div class="setting-row">
+        <label for="modifierSelect">
+          <span class="setting-icon">⌨️</span>
+          <span data-i18n="modifierKey">Modifier Key</span>
+        </label>
+        <select id="modifierSelect">
+          <option value="alt" data-mac="⌥ Option + Click" data-win="Alt + Click">Alt + Click</option>
+          <option value="ctrl" data-mac="⌃ Control + Click" data-win="Ctrl + Click">Ctrl + Click</option>
+          <option value="meta" data-mac="⌘ Command + Click" data-win="Win + Click">Meta + Click</option>
+          <option value="shift" data-mac="⇧ Shift + Click" data-win="Shift + Click">Shift + Click</option>
+        </select>
+      </div>
+
+      <div class="setting-row">
+        <label for="copyFormatSelect">
+          <span class="setting-icon">📝</span>
+          <span data-i18n="copyFormat">Copy Format</span>
+        </label>
+        <select id="copyFormatSelect">
+          <option value="urls">URLs only</option>
+          <option value="title-url">Title + URL</option>
+          <option value="title-tab-url">Title [Tab] URL</option>
+          <option value="markdown">Markdown</option>
+          <option value="json">JSON</option>
+          <option value="html">HTML</option>
+        </select>
+      </div>
+
+      <div class="setting-row">
+        <label for="themeSelect">
+          <span class="setting-icon">🎨</span>
+          <span data-i18n="theme">Theme</span>
+        </label>
+        <select id="themeSelect">
+          <option value="system" data-i18n-option="themeSystem">System</option>
+          <option value="dark" data-i18n-option="themeDark">Dark</option>
+          <option value="light" data-i18n-option="themeLight">Light</option>
+        </select>
+      </div>
+
+      <div class="setting-row">
+        <label for="languageSelect">
+          <span class="setting-icon">🌐</span>
+          <span data-i18n="language">Language</span>
+        </label>
+        <select id="languageSelect">
+          <option value="en">English</option>
+          <option value="ko">한국어</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="collected-section">
+      <div class="count-display">
+        <div class="count-ring">
+          <span id="linkCount">0</span>
+        </div>
+        <span class="count-label" data-i18n="collectedLinks">links collected</span>
+      </div>
+
+      <div class="button-group">
+        <button id="copyBtn" class="action-btn primary" disabled>
+          <span class="btn-icon">📋</span>
+          <span class="btn-text" data-i18n="copyLinks">Copy All</span>
+        </button>
+        <button id="clearBtn" class="action-btn secondary" disabled>
+          <span class="btn-icon">🗑️</span>
+          <span class="btn-text" data-i18n="clearAll">Clear</span>
+        </button>
+      </div>
+
+      <div class="button-group secondary-actions">
+        <!-- Row 1 -->
+        <button id="openTabsBtn" class="action-btn tertiary" disabled title="Open in tabs">
+          <span class="btn-icon">🔗</span>
+          <span class="btn-text" data-i18n="openTabs">Open Tabs</span>
+        </button>
+        <button id="reverseBtn" class="action-btn tertiary" disabled title="Reverse order">
+          <span class="btn-icon">🔄</span>
+          <span class="btn-text" data-i18n="reverse">Reverse</span>
+        </button>
+
+        <!-- Row 2 (Hidden by default but ready for grid) -->
+        <button id="appendBtn" class="action-btn tertiary" disabled title="Append to clipboard" style="display:none">
+          <span class="btn-icon">➕</span>
+          <span class="btn-text" data-i18n="appendClipboard">Append</span>
+        </button>
+        <button id="bookmarkBtn" class="action-btn tertiary" disabled title="Create bookmarks" style="display:none">
+          <span class="btn-icon">⭐</span>
+          <span class="btn-text" data-i18n="createBookmarks">Bookmark</span>
+        </button>
+        <button id="markVisitedBtn" class="action-btn tertiary" disabled title="Mark as visited" style="display:none">
+          <span class="btn-icon">👁️</span>
+          <span class="btn-text" data-i18n="markVisited">Mark Visited</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="pattern-section">
+      <div class="section-header-row">
+        <span class="section-title" data-i18n="patternCollect">Pattern Collect</span>
+      </div>
+      <div class="pattern-input-row">
+        <select id="patternTypeSelect">
+          <option value="regex" data-i18n-option="patternTypeRegex">Regex</option>
+          <option value="css" data-i18n-option="patternTypeCss">CSS Selector</option>
+        </select>
+        <input type="text" id="patternInput" class="pattern-input" data-i18n-placeholder="patternPlaceholderRegex"
+          placeholder="example\\.com/news/" autocomplete="off">
+      </div>
+      <div class="button-group pattern-actions">
+        <button id="previewPatternBtn" class="action-btn tertiary pattern-btn">
+          <span class="btn-icon">🔍</span>
+          <span class="btn-text" data-i18n="previewPattern">Preview</span>
+        </button>
+        <button id="collectPatternBtn" class="action-btn tertiary pattern-btn">
+          <span class="btn-icon">🧲</span>
+          <span class="btn-text" data-i18n="collectPattern">Collect</span>
+        </button>
+      </div>
+      <p id="patternPreviewText" class="pattern-preview-text" data-i18n="patternHint">Enter pattern and preview</p>
+    </section>
+
+    <section class="session-section">
+      <div class="section-header-row">
+        <span class="section-title" data-i18n="sessionHistory">Session History</span>
+        <button id="saveSessionBtn" class="session-save-btn" data-i18n="saveSession">Save</button>
+      </div>
+      <div id="sessionList" class="session-list"></div>
+    </section>
+
+    <section class="data-io-section">
+      <div class="section-header-row">
+        <span class="section-title" data-i18n="dataIO">Data Transfer</span>
+      </div>
+      <div class="io-grid">
+        <button id="exportJsonBtn" class="action-btn tertiary io-btn" disabled>
+          <span class="btn-icon">⬇️</span>
+          <span class="btn-text" data-i18n="exportJson">Export JSON</span>
+        </button>
+        <button id="exportCsvBtn" class="action-btn tertiary io-btn" disabled>
+          <span class="btn-icon">⬇️</span>
+          <span class="btn-text" data-i18n="exportCsv">Export CSV</span>
+        </button>
+        <button id="importMergeBtn" class="action-btn tertiary io-btn">
+          <span class="btn-icon">⬆️</span>
+          <span class="btn-text" data-i18n="importMerge">Import Merge</span>
+        </button>
+        <button id="importReplaceBtn" class="action-btn tertiary io-btn">
+          <span class="btn-icon">⬆️</span>
+          <span class="btn-text" data-i18n="importReplace">Import Replace</span>
+        </button>
+      </div>
+      <input type="file" id="importFileInput" accept=".json,.csv,application/json,text/csv" hidden>
+    </section>
+
+    <section class="stats-section">
+      <div class="section-header-row">
+        <span class="section-title" data-i18n="statsDashboard">Collection Stats</span>
+      </div>
+
+      <div class="stats-total-row">
+        <span class="stats-label" data-i18n="statsTotalLabel">Total added</span>
+        <strong id="statsTotalValue" class="stats-total-value">0</strong>
+      </div>
+
+      <div class="stats-subsection">
+        <p class="stats-subtitle" data-i18n="statsTrend7Days">Last 7 days</p>
+        <div id="statsTrendBars" class="stats-trend-bars"></div>
+      </div>
+
+      <div class="stats-subsection">
+        <p class="stats-subtitle" data-i18n="statsTopDomains">Top domains</p>
+        <div id="statsTopDomains" class="stats-top-domains"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="usage-hints">
+        <div class="hint-item">
+          <span class="hint-icon">🖱️</span>
+          <span data-i18n="dragHint">Drag to select area</span>
+        </div>
+        <div class="hint-item">
+          <span class="hint-icon">👆</span>
+          <span data-i18n="clickHint">Hotkey+click to add</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#" id="rateBtn" class="footer-link" data-i18n="rateUs">⭐ Rate Us</a>
+        <a href="#" id="feedbackBtn" class="footer-link" data-i18n="feedback">💬 Feedback</a>
+      </div>
+    </footer>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="link-transfer.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>
