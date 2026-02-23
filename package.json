@@ -1,0 +1,31 @@
+{
+  "name": "catchurls-extension",
+  "version": "1.0.3.1",
+  "description": "Chrome extension to collect multiple links via drag selection or modifier+click, then copy to clipboard.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:e2e",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:ui": "playwright test --ui",
+    "pw:install": "playwright install chromium"
+  },
+  "keywords": [
+    "chrome-extension",
+    "link-collector",
+    "clipboard",
+    "productivity",
+    "manifest-v3"
+  ],
+  "author": "CatchUrls",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zpdldhkdl/catchurls-extension.git"
+  },
+  "homepage": "https://github.com/zpdldhkdl/catchurls-extension",
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "http-server": "^14.1.1"
+  }
+}
