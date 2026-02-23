@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CatchUrls E2E Scroll Fixture</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        line-height: 1.4;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: #0b1220;
+        color: #e5e7eb;
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        z-index: 1;
+      }
+      main {
+        padding: 16px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .links {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .row {
+        padding: 10px 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        background: #fff;
+      }
+      .row a {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 8px;
+        background: #eff6ff;
+        color: #1d4ed8;
+        text-decoration: none;
+      }
+      .row a:hover { background: #dbeafe; }
+      footer {
+        padding: 80px 16px;
+        text-align: center;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>CatchUrls E2E Fixture (scrollable + lots of links)</div>
+      <div style="font-size: 12px; opacity: 0.8; margin-top: 4px;">
+        Tip: press ESC to toggle selection mode.
+      </div>
+    </header>
+
+    <main>
+      <div class="links" id="links"></div>
+    </main>
+
+    <footer>
+      End of page
+    </footer>
+
+    <script>
+      (function () {
+        var container = document.getElementById('links');
+        var fragment = document.createDocumentFragment();
+        for (var i = 0; i < 600; i++) {
+          var row = document.createElement('div');
+          row.className = 'row';
+          var a = document.createElement('a');
+          a.href = 'https://example.com/item/' + i;
+          a.textContent = 'Example Link ' + i;
+          a.setAttribute('data-index', String(i));
+          row.appendChild(a);
+          fragment.appendChild(row);
+        }
+        container.appendChild(fragment);
+      })();
+    </script>
+  </body>
+</html>

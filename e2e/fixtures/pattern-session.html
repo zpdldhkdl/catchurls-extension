@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pattern Session Fixture</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 24px;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+
+    .section {
+      margin-bottom: 24px;
+      padding: 16px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 10px;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      color: #93c5fd;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    a {
+      color: #67e8f9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Pattern + Session Test Fixture</h1>
+
+  <section class="section">
+    <h2>News Links</h2>
+    <div class="links article-list">
+      <a href="https://example.com/news/1">News 1</a>
+      <a href="https://example.com/news/2">News 2</a>
+      <a href="https://example.com/news/3">News 3</a>
+      <a href="https://example.com/news/2">News 2 duplicate</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Docs Links</h2>
+    <div class="links docs-list">
+      <a href="https://docs.example.com/guide/1">Guide 1</a>
+      <a href="https://docs.example.com/guide/2">Guide 2</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Open Command Links</h2>
+    <div class="links open-list">
+      <a href="https://example.com/open/1">Open 1</a>
+      <a href="https://example.com/open/2">Open 2</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Ignored Links</h2>
+    <div class="links">
+      <a href="mailto:test@example.com">Mail</a>
+      <a href="tel:+123456789">Tel</a>
+      <a href="javascript:void(0)">JavaScript</a>
+      <a href="#fragment">Fragment</a>
+    </div>
+  </section>
+</body>
+
+</html>
