@@ -1,0 +1,118 @@
+{
+  "extName": {
+    "message": "CatchUrls"
+  },
+  "extDescription": {
+    "message": "リンク一括収集: ドラッグで範囲選択、またはAlt+クリックでリンクを個別追加。ESCキーで選択モード切り替え。複数のエクスポート形式に対応。"
+  },
+  "escHint": {
+    "message": "でページ上で切り替え"
+  },
+  "dragHint": {
+    "message": "ドラッグで範囲選択"
+  },
+  "clickHint": {
+    "message": "ホットキー+クリックで追加"
+  },
+  "selectionMode": {
+    "message": "選択モード"
+  },
+  "collectedLinks": {
+    "message": "収集したリンク"
+  },
+  "modifierKey": {
+    "message": "ホットキー（Altなど）"
+  },
+  "language": {
+    "message": "言語"
+  },
+  "copyLinks": {
+    "message": "リンクをコピー"
+  },
+  "clearAll": {
+    "message": "全て削除"
+  },
+  "modeOn": {
+    "message": "ON"
+  },
+  "modeOff": {
+    "message": "OFF"
+  },
+  "modeNA": {
+    "message": "N/A"
+  },
+  "copied": {
+    "message": "コピー完了!"
+  },
+  "selectionModeOn": {
+    "message": "選択モード ON"
+  },
+  "selectionModeOff": {
+    "message": "選択モード OFF"
+  },
+  "linksAdded": {
+    "message": "追加しました (現在 $COUNT$個)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "linksCopied": {
+    "message": "$COUNT$個のリンクをコピーしました",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "linksCopiedTotal": {
+    "message": "$COUNT$個のリンクをコピーしました (合計 $TOTAL$個)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "alreadyAdded": {
+    "message": "既に追加済みのリンクです"
+  },
+  "noNewLinks": {
+    "message": "新しいリンクはありません"
+  },
+  "cleared": {
+    "message": "クリアしました"
+  },
+  "scriptInjectionFailed": {
+    "message": "スクリプト挿入に失敗しました。ページを更新してください。"
+  },
+  "pageNotSupported": {
+    "message": "このページでは使用できません"
+  },
+  "refreshAndRetry": {
+    "message": "ページを更新してから再試行してください"
+  },
+  "copyFailed": {
+    "message": "コピーに失敗しました"
+  },
+  "clearFailed": {
+    "message": "クリアに失敗しました"
+  },
+  "toggleKey": {
+    "message": "トグルキー"
+  },
+  "pressAnyKey": {
+    "message": "任意のキーを押してください..."
+  },
+  "keySet": {
+    "message": "トグルキーが$KEY$に設定されました",
+    "placeholders": {
+      "key": {
+        "content": "$1"
+      }
+    }
+  }
+}

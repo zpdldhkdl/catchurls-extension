@@ -1,0 +1,118 @@
+{
+  "extName": {
+    "message": "CatchUrls"
+  },
+  "extDescription": {
+    "message": "Bulk link collector: drag to select or Alt+click to add links. Press ESC to toggle mode. Multiple export formats."
+  },
+  "escHint": {
+    "message": "to toggle on page"
+  },
+  "dragHint": {
+    "message": "Drag to select area"
+  },
+  "clickHint": {
+    "message": "Hotkey+click to add"
+  },
+  "selectionMode": {
+    "message": "Selection Mode"
+  },
+  "collectedLinks": {
+    "message": "Collected Links"
+  },
+  "modifierKey": {
+    "message": "Hotkey (e.g., Alt)"
+  },
+  "language": {
+    "message": "Language"
+  },
+  "copyLinks": {
+    "message": "Copy Links"
+  },
+  "clearAll": {
+    "message": "Clear All"
+  },
+  "modeOn": {
+    "message": "ON"
+  },
+  "modeOff": {
+    "message": "OFF"
+  },
+  "modeNA": {
+    "message": "N/A"
+  },
+  "copied": {
+    "message": "Copied!"
+  },
+  "selectionModeOn": {
+    "message": "Selection Mode ON"
+  },
+  "selectionModeOff": {
+    "message": "Selection Mode OFF"
+  },
+  "linksAdded": {
+    "message": "Added (total $COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "linksCopied": {
+    "message": "$COUNT$ links copied",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "linksCopiedTotal": {
+    "message": "$COUNT$ links copied (total $TOTAL$)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "alreadyAdded": {
+    "message": "Link already added"
+  },
+  "noNewLinks": {
+    "message": "No new links"
+  },
+  "cleared": {
+    "message": "Cleared"
+  },
+  "scriptInjectionFailed": {
+    "message": "Script injection failed. Please refresh the page."
+  },
+  "pageNotSupported": {
+    "message": "This page is not supported"
+  },
+  "refreshAndRetry": {
+    "message": "Please refresh the page and try again"
+  },
+  "copyFailed": {
+    "message": "Copy failed"
+  },
+  "clearFailed": {
+    "message": "Clear failed"
+  },
+  "toggleKey": {
+    "message": "Toggle Key"
+  },
+  "pressAnyKey": {
+    "message": "Press any key..."
+  },
+  "keySet": {
+    "message": "Toggle key set to $KEY$",
+    "placeholders": {
+      "key": {
+        "content": "$1"
+      }
+    }
+  }
+}

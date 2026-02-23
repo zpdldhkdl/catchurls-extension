@@ -1,0 +1,118 @@
+{
+  "extName": {
+    "message": "CatchUrls"
+  },
+  "extDescription": {
+    "message": "다중 링크 수집기: 드래그로 영역 선택 또는 Alt+클릭으로 개별 링크 추가. ESC 키로 선택 모드 토글. 다양한 내보내기 형식 지원."
+  },
+  "escHint": {
+    "message": "키로 페이지에서 토글"
+  },
+  "dragHint": {
+    "message": "드래그로 영역 선택"
+  },
+  "clickHint": {
+    "message": "단축키+클릭으로 개별 추가"
+  },
+  "selectionMode": {
+    "message": "선택 모드"
+  },
+  "collectedLinks": {
+    "message": "수집된 링크"
+  },
+  "modifierKey": {
+    "message": "단축키(Alt 등)"
+  },
+  "language": {
+    "message": "언어"
+  },
+  "copyLinks": {
+    "message": "링크 복사"
+  },
+  "clearAll": {
+    "message": "전체 삭제"
+  },
+  "modeOn": {
+    "message": "ON"
+  },
+  "modeOff": {
+    "message": "OFF"
+  },
+  "modeNA": {
+    "message": "N/A"
+  },
+  "copied": {
+    "message": "복사됨!"
+  },
+  "selectionModeOn": {
+    "message": "선택 모드 ON"
+  },
+  "selectionModeOff": {
+    "message": "선택 모드 OFF"
+  },
+  "linksAdded": {
+    "message": "추가됨 (현재 $COUNT$개)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "linksCopied": {
+    "message": "$COUNT$개 링크 복사됨",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "linksCopiedTotal": {
+    "message": "$COUNT$개 링크 복사됨 (총 $TOTAL$개)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "alreadyAdded": {
+    "message": "이미 추가된 링크입니다"
+  },
+  "noNewLinks": {
+    "message": "새로운 링크 없음"
+  },
+  "cleared": {
+    "message": "초기화됨"
+  },
+  "scriptInjectionFailed": {
+    "message": "스크립트 주입 실패. 페이지를 새로고침해주세요."
+  },
+  "pageNotSupported": {
+    "message": "이 페이지에서는 사용할 수 없습니다"
+  },
+  "refreshAndRetry": {
+    "message": "페이지를 새로고침 후 다시 시도해주세요"
+  },
+  "copyFailed": {
+    "message": "복사 실패"
+  },
+  "clearFailed": {
+    "message": "초기화 실패"
+  },
+  "toggleKey": {
+    "message": "토글 키"
+  },
+  "pressAnyKey": {
+    "message": "아무 키나 누르세요..."
+  },
+  "keySet": {
+    "message": "토글 키가 $KEY$(으)로 설정됨",
+    "placeholders": {
+      "key": {
+        "content": "$1"
+      }
+    }
+  }
+}
