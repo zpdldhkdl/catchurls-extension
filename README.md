@@ -109,9 +109,6 @@ Install from:
 | `scripting` | Execute extension logic on supported pages. |
 | `tabs` | Query active tab and open collected links in new tabs. |
 
-Privacy policy:
-- [`PRIVACY_POLICY.md`](./PRIVACY_POLICY.md)
-
 ## Keyboard Shortcuts
 
 단축키는 현재 아래 3개 명령만 공식 지원합니다.
